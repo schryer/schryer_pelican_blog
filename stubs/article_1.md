@@ -1,8 +1,8 @@
 Title: First steps with Pelican
 Date: 2014-05-22 22:00
 Tags: pelican, python
-Category: pelican
-Slug: pelican
+Category: Blog
+Slug: 1
 Author: David Schryer
 Summary: First steps with Pelican
 
