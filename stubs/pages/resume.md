@@ -6,83 +6,61 @@ Slug: resume
 Author: David Schryer
 Summary: My resume
 
-Researcher — Technical editor — Programmer —
-[FOSS](http://en.wikipedia.org/wiki/Free_and_open-source_software)
-activist
+Researcher — Technical editor — Programmer — [FOSS] activist
 
 **Systems biology modeler with a chemical engineering background.**
 Specialty in dynamic isotope exchange experiments to study both
-metabolic flux and protein production and turnover. Capable communicator
-(founder of [Scientific Scribe OÜ](http://www.scientificscribe.com)) with
-modeling and programming skills. Believes that reproducible research is
-best realized using free and open source
-([FOSS](http://en.wikipedia.org/wiki/Free_and_open-source_software))
-tools.
+metabolic flux and protein production and turnover. Capable
+communicator (founder of [Scientific Scribe OÜ]) with modeling and
+programming skills. Believes that reproducible research is best
+realized using free and open source ([FOSS]) tools.
 
 *Open to collaboration* — <schryer@ut.ee>
 
-Employment
-==========
+## Employment
 
 University of Tartu, Researcher, 2012.
-:   -   Analysis of label-free, dynamic
-        [SILAC](http://en.wikipedia.org/wiki/Stable_isotope_labeling_by_amino_acids_in_cell_culture),
-        and static
-        [SILAC](http://en.wikipedia.org/wiki/Stable_isotope_labeling_by_amino_acids_in_cell_culture)
+:   -   Analysis of label-free, dynamic [SILAC], and static [SILAC]
         MS/MS proteomics data.
-    -   Processing sequencing data, including analysis of ribosome
-        profiling data.
-    -   Instructing PhD students in data analysis and visualization
-        ([Python](http://www.python.org)).
+    -   Processing sequencing data, including analysis of ribosome profiling data.
+    -   Instructing PhD students in data analysis and visualization ([Python]).
 
 Scientific Scribe OÜ, Founder, 2012.
 :   -   Technical editing of grant proposals and academic manuscripts.
-    -   Technical editing and typesetting of PhD dissertations in
-        [LaTeX](http://www.latex-project.org/).
+    -   Technical editing and typesetting of PhD dissertations in [LaTeX].
 
 Tallinn University of Technology, Institute of Cybernetics, Researcher, 2008 – 2012.
 :   -   Development of tools to build and simulate isotopomer and
         isotopologue models.
     -   Application of isotopomer modeling to study the recycling
         dynamics of phosphorylated metabolites in heart.
-    -   Flux Balance Analysis
-        ([FBA](http://en.wikipedia.org/wiki/Flux_Balance_Analysis)) of
-        genome scale metabolic models.
+    -   Flux Balance Analysis ([FBA]) of genome scale metabolic models.
 
 TFTAK, Systems biology developer, 2006 – 2008.
 :   -   Developed computational tools for systems biology analysis.
-    -   Installed and improved the fermentation systems and laboratory
-        infrastructure.
-    -   Introduced [Python](http://www.python.org) to an MS Excel based
-        analysis team.
+    -   Installed and improved the fermentation systems and laboratory infrastructure.
+    -   Introduced [Python] to an MS Excel based analysis team.
 
 Tallinn University of Technology, Department of Chemical Engineering, 2004 – 2006.
 :   -   Ran a pilot plant for the industrial extraction of protein from
         rapeseed.
-    -   Wrote an English language curriculum document for department
-        accreditation.
+    -   Wrote an English language curriculum document for department accreditation.
 
 EBS high school, Science teacher, 2005 – 2006.
 :   -   Developed and gave courses in Chemistry, Physics, and Computer
         Science.
-    -   Wrote an English language curriculum document for internal use
-        at EBS.
+    -   Wrote an English language curriculum document for internal use at EBS.
 
 University of Toronto, Research assistant, 2000 – 2004.
-:   -   Upgrade and repair of an X-ray photoelectron spectrometer
-        ([XPS](http://en.wikipedia.org/wiki/X-ray_photoelectron_spectroscopy)).
-    -   Maintenance of a custom mass spectrometer and associated
-        [UHV](http://en.wikipedia.org/wiki/Ultra-high_vacuum) systems.
+:   -   Upgrade and repair of an X-ray photoelectron spectrometer ([XPS]).
+    -   Maintenance of a custom mass spectrometer and associated [UHV] systems.
     -   Designed and built a multi-annulus flow apparatus used to
         measure the transport properties of solid oxide fuel cell
         membranes at 1000°C.
-    -   Studied the kinetics of water exchange with cellulose using
-        isotope tracers.
-    -   Developed a multimedia fate & transport model to study
-        persistent organic pollutants.
+    -   Studied the kinetics of water exchange with cellulose using isotope tracers.
+    -   Developed a multimedia fate & transport model to study persistent organic pollutants.
 
-Education
-=========
+## Education
 
 Tallinn University of Technology, Doctor of philosophy Ph.D. in Technical Physics
 :   -   Graduation April 2012.
@@ -103,42 +81,35 @@ University of Toronto, Master of Applied Science M.A.Sc. in Chemical Engineering
 University of Toronto, Bachelor of Applied Science B.A.Sc. in Chemical Engineering
 :   -   Graduation June 2000.
     -   Dissertation — *Measuring the ion mobility of oxygen through
-        solid oxide membranes using transient* $^{18}\text{O}$ *exchange and*
-        [SIMS](http://en.wikipedia.org/wiki/Secondary_ion_mass_spectrometry)
+        solid oxide membranes using transient* $^{18}\text{O}$ *exchange and* [SIMS]
         *depth profiling*
     -   Awards: (A) Best Plant Design Project 2000 (B) Undergraduate
         Achievement Scholarship – \$1500 (received twice)
 
-Skills
-======
+## Skills
 
 Experienced programmer in:
-:   -   [Python](http://www.python.org) (package development, unit
-        testing, reusable code)
+:   -   [Python] (package development, unit testing, reusable code).
 
 Visualization and analysis of data using:
-:   -   [Python](http://www.python.org) (matplotlib, pandas, NumPy,
-        SciPy, BioPython)
+:   -   [Python] (matplotlib, pandas, NumPy, SciPy, BioPython, h5py).
 
 Development of complex documents, course material, and presentations:
-:   -   [LaTeX](http://www.latex-project.org/),
-        [reST](http://en.wikipedia.org/wiki/ReStructuredText), Sphinx,
-        Django, Beamer, IPython notebook.
+:   -   [LaTeX], [reST], Sphinx, Django, Beamer, [IPython notebook].
 
 Practices safe computation with version control and unit testing:
-:   -   hg, git, svn, bzr, nosetests
+:   -   hg, git, svn, bzr, nosetests.
 
-Avid supporter of [FOSS](http://en.wikipedia.org/wiki/Free_and_open-source_software) with an emphasis on sharing my code:
-:   -   Bitbucket (schryer), GitHub (schryer).
+Avid supporter of [FOSS] with an emphasis on sharing my code:
+:   -   Bitbucket (`schryer`), GitHub (`schryer`).
 
 Basic proficiency in:
 :   -   C, C++, Fortran, COBOL, Pascal, Java.
 
 Basic front-end and advanced back-end web development using:
-:   -   GAE, OpenShift, dotCloud, [Python](http://www.python.org)
+:   -   GAE, OpenShift, dotCloud, [Python].
 
-Publications
-============
+## Publications
 
 -   **Schryer DW**, Peterson P, Illaste A, Vendelin M: [*Sensitivity analysis
     of flux determination in heart by* $\text{H}_2^{18}\text{O}$ *-provided labeling
@@ -165,8 +136,7 @@ Publications
     Model: Validation and uncertainty analysis using a dynamic Monte
     Carlo method.* In 22nd Annual SETAC meeting 2001.
 
-Contact
-=======
+## Contact
 
 -   **github:** <https://schryer.github.io>
 -   **bitbucket:** <https://bitbucket.org/schryer>

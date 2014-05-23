@@ -4,6 +4,8 @@ __pycache__/
 *~
 
 output/
+content/*.md
+content/pages/
 
 # C extensions
 *.so

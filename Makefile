@@ -34,10 +34,10 @@ help:
 	@echo 'Makefile for a pelican Web site                                        '
 	@echo '                                                                       '
 	@echo 'Usage:                                                                 '
-	@echo '   make html                        (re)generate the web site          '
-	@echo '   make clean                       remove the generated files         '
-	@echo '   make regenerate                  regenerate files upon modification '
-	@echo '   make publish                     generate using production settings '
+	@echo '   make html                        (re)generate the web site               '
+	@echo '   make regenerate                  regenerate files upon modification      '
+	@echo '   make clean                       remove generated Markdown files from content/.'
+	@echo '   make publish                     generate using production settings      '
 	@echo '   make serve [PORT=8000]           serve site at http://localhost:8000'
 	@echo '   make devserver [PORT=8000]       start/restart develop_server.sh    '
 	@echo '   make stopserver                  stop local server                  '
@@ -52,13 +52,15 @@ help:
 	@echo 'Set the DEBUG variable to 1 to enable debugging, e.g. make DEBUG=1 html'
 	@echo '                                                                       '
 
+clean:
+	python add_links.py --clean
+
 html:
+	python add_links.py
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
 
-clean:
-	[ ! -d $(OUTPUTDIR) ] || rm -rf $(OUTPUTDIR)
-
 regenerate:
+	python add_links.py
 	$(PELICAN) -r $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
 
 serve:
@@ -81,6 +83,7 @@ stopserver:
 	@echo 'Stopped Pelican and SimpleHTTPServer processes running in background.'
 
 publish:
+	python add_links.py
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
 
 ssh_upload: publish
@@ -105,4 +108,4 @@ github: publish
 	ghp-import $(OUTPUTDIR)
 	git push origin gh-pages
 
-.PHONY: html help clean regenerate serve devserver publish ssh_upload rsync_upload dropbox_upload ftp_upload s3_upload cf_upload github
+.PHONY: html help regenerate serve devserver publish ssh_upload rsync_upload dropbox_upload ftp_upload s3_upload cf_upload github

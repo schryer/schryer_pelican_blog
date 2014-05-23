@@ -4,7 +4,10 @@ from __future__ import unicode_literals
 
 AUTHOR = u'David Schryer'
 SITENAME = u'David Schryer'
-SITEURL = ''
+SITEURL = ''#'http://schryer.github.io'
+
+CUSTOM_ARTICLE_SHARING = 'sharing.html'
+CUSTOM_ARTICLE_SCRIPTS = 'sharing_scripts.html'
 
 TIMEZONE = 'Europe/Tallinn'
 
@@ -35,5 +38,5 @@ THEME = 'pelican-themes/subtle'
 #from plugins.pelican_plugin_render_math import math
 #PLUGINS = [math,]
 
-PLUGIN_PATH = 'plugins'
+PLUGIN_PATH = 'pelican-plugins'
 PLUGINS = ['render_math',]
