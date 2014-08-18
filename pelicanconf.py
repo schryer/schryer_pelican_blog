@@ -35,8 +35,9 @@ DEFAULT_PAGINATION = 10
 
 THEME = 'pelican-themes/subtle'
 
-#from plugins.pelican_plugin_render_math import math
-#PLUGINS = [math,]
+MARKUP = ['md', 'ipynb']
 
-PLUGIN_PATH = 'pelican-plugins'
-PLUGINS = ['render_math',]
+DISPLAY_CATEGORIES_ON_MENU = True
+
+PLUGIN_PATHS = ['pelican-plugins',]
+PLUGINS = ['render_math', 'ipynb']

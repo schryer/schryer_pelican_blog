@@ -46,3 +46,12 @@
 [SIMS]: http://en.wikipedia.org/wiki/Secondary_ion_mass_spectrometry
 "Secondary ion mass spectrometry"
 
+[matplotlib]: http://matplotlib.org/
+"matplotlib"
+
+[external_links.md]: https://github.com/schryer/schryer_pelican_blog/blob/master/external_links.md
+"external_links.md"
+
+[add_links.py]: https://github.com/schryer/schryer_pelican_blog/blob/master/add_links.py
+"add_links.py"
+

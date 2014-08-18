@@ -6,6 +6,7 @@ __pycache__/
 output/
 content/*.md
 content/pages/
+content/notebooks/
 
 # C extensions
 *.so
