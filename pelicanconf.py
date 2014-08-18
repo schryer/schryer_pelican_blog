@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = u'David Schryer'
 SITENAME = u'David Schryer'
-SITEURL = ''#'http://schryer.github.io'
+SITEURL = ''
 
 CUSTOM_ARTICLE_SHARING = 'sharing.html'
 CUSTOM_ARTICLE_SCRIPTS = 'sharing_scripts.html'

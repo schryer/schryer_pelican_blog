@@ -1,10 +1,10 @@
-# Pelican setup to deploy my public webpage
+# Pelican setup to deploy the gh-pages branch of python_course_material
 
-My public webpage is deployed at:
+The webpage is deployed at:
 
-http://schryer.github.io
+http://schryer.github.io/python_course_material/
 
-## Building `schryer.github.io`
+## Building `schryer.github.io/python_course_material`
 
 The build process consists of two commands, both of which are executed
 in the root directory of this repository.  The first is a `Python`
