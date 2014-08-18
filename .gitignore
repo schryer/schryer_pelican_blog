@@ -3,6 +3,7 @@ __pycache__/
 *.py[cod]
 *~
 
+cache/
 output/
 content/*.md
 content/pages/

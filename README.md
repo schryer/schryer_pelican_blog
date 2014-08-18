@@ -2,7 +2,7 @@
 
 The webpage is deployed at:
 
-http://schryer.github.io/
+http://schryer.github.io/schryer_pelican_blog
 
 ## Building the blog pages
 
