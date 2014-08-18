@@ -1,10 +1,10 @@
-# Pelican setup to deploy the gh-pages branch of python_course_material
+# Pelican setup to deploy the gh-pages branch of schryer_pelican_blog
 
 The webpage is deployed at:
 
-http://schryer.github.io/python_course_material/
+http://schryer.github.io/
 
-## Building `schryer.github.io/python_course_material`
+## Building the blog pages
 
 The build process consists of two commands, both of which are executed
 in the root directory of this repository.  The first is a `Python`
@@ -17,7 +17,8 @@ python add_links.py
 ```
 
 To avoid confusing these generated files with user generated files,
-the extension `.md` has been replaced with `_GENERATED_by_add_links.md`.
+the extensions in the group EXT (`.md` or `.ipynb` or `.ipynb-meta`) 
+have been replaced with `_GENERATED_by_add_links.EXT`.
 
 The second command is the `Pelican` build itself which places its output
 in `output/`:
