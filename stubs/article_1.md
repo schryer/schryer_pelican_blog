@@ -56,6 +56,29 @@ which removes all generated files. The generated files replace `.md`
 with `_GENERATED_by_add_links.md` to ensure other `.md` files created
 by users in `content/` are not removed. 
 
+## Typesetting mathematics
+
+Let us start with Bayes' theorem:
+
+$$
+P(\mu~|~D) = \frac{P(D~|~\mu)P(\mu)}{P(D)}
+$$
+
+We'll use a flat prior on $\mu$ (i.e. $P(\mu) \propto 1$ over the region of interest) and use the likelihood
+
+$$
+P(D~|~\mu) = \prod_{i=1}^N \frac{1}{\sqrt{2\pi\sigma_x^2}}\exp\left[\frac{(\mu - x_i)^2}{2\sigma_x^2}\right]
+$$
+
+Computing this product and manipulating the terms, it's straightforward to show that this gives
+
+$$
+P(\mu~|~D) \propto \exp\left[\frac{-(\mu - \bar{x})^2}{2\sigma_\mu^2}\right]
+$$
+
+which is recognizable as a normal distribution with mean $\bar{x}$ and standard deviation $\sigma_\mu$.
+That is, **the Bayesian posterior on $\mu$ in this case is exactly equal to the frequentist sampling distribution for $\mu$**.
+
 ## Next steps
 
 In future posts I will try to include [IPython notebook] files inline.
