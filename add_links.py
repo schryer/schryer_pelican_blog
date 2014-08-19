@@ -24,7 +24,92 @@ Each markdown file in stubs/ is converted and written to output/
 
     return parser
 
-def make_content_file_from_stub(stub_filename, content_type='md', link_filename='external_links.md'):
+def convert_ipynb_file_to_stub(ipynb_path):
+
+    generation_directory = 'stubs/notebooks/generated/'
+    generated_path = ipynb_path.replace('stubs/notebooks/', generation_directory).replace('.ipynb', '_GENERATED_by_add_links.ipynb')
+    generated_md_path = generated_path.replace('.ipynb', '.md')
+    stub_md_path = generated_path.replace('.ipynb', '_stub.md')
+    final_md_path = stub_md_path.replace(generation_directory, 'content/')
+        
+    # Copy original files to generated directory    
+    original_meta_path = ipynb_path.replace('.ipynb', '.ipynb-meta')
+    generated_meta_path = generated_path.replace('.ipynb', '.ipynb-meta')
+    
+    cmd = 'cp {} {}'.format(original_meta_path, generated_meta_path)
+    print('Executing: {}'.format(cmd))
+    os.system(cmd)
+
+    cmd = 'cp {} {}'.format(ipynb_path, generated_path)
+    print('Executing: {}'.format(cmd))
+    os.system(cmd)
+
+    # Convert ipynb files within generated directory
+    support_path = generated_path.replace('.ipynb', '_files')
+    support_directory = os.path.split(support_path)[-1]
+    generated_filename = os.path.split(generated_path)[-1]
+    
+    cwd = os.getcwd()
+    print('Changing working directory to: {}'.format(generation_directory))
+    os.chdir(generation_directory)
+    
+    cmd = 'ipython nbconvert --to markdown {}'.format(generated_filename)
+    print('Executing: {}'.format(cmd))
+    os.system(cmd)
+    
+    print('Changing working directory back to: {}'.format(cwd))
+    os.chdir(cwd)
+
+    # A: Write final .md file and B: move support files to images directory
+    glob_str = '{}/*'.format(support_path)
+    support_files = glob.glob(glob_str)
+        
+    # A: Write final .md file
+    print('Reading generated Markdown file: {}'.format(generated_md_path))
+    with open(generated_md_path, 'r') as f:
+        md_lines = f.readlines()
+
+    print('Reading: {}'.format(generated_meta_path))
+    with open(generated_meta_path, 'r') as f:
+        meta_lines = f.readlines()
+
+    print('Writing stub Markdown file: {}'.format(stub_md_path))
+    support_files_found = []
+    with open(stub_md_path, 'w') as f:
+        for line in meta_lines:
+            f.write(line)
+        for line_number, line in enumerate(md_lines):
+            if len(line.split(support_directory)) > 1:
+                line = line.replace(support_directory, 'images')
+                
+                found = False
+                for support_file in support_files:
+                    base_filename = os.path.split(support_file)[-1]
+                    if len(line.split(base_filename)) > 1:
+                        print('Replacing support file {} on Markdown line {} to: {}'.format(base_filename, line_number, line))
+                        support_files_found.append(support_file)
+                        found = True
+
+                if not found:
+                    raise Exception('Something is wrong with this support file reference on line number {}'.format(line_number),
+                                    (line, support_directory))
+            f.write(line)
+
+    if len(support_files_found) != len(support_files):
+        raise Exception('Not all support files were found.', (support_files, support_files_found, generated_path))                        
+                
+    # C: move support files to images directory
+    for support_file in support_files:
+        base_filename = os.path.split(support_file)[-1]
+        image_filename = 'content/images/{}'.format(base_filename)
+        cmd = 'cp {} {}'.format(support_file, image_filename)
+        print('Moving supporting image using: {}'.format(cmd))
+        os.system(cmd)
+
+    return stub_md_path, final_md_path
+
+    
+def make_content_file_from_stub(stub_filename, generated_filename, link_filename='external_links.md'):
 
     print('Reading stub file: {}'.format(stub_filename))
     with open(stub_filename, 'r') as f:
@@ -33,45 +118,11 @@ def make_content_file_from_stub(stub_filename, content_type='md', link_filename=
     print('Reading link file: {}'.format(link_filename))
     with open(link_filename, 'r') as f:
         link_lines = f.readlines()
-
-    substitutions = {}
-    for link_line in link_lines:
-        if link_line.startswith('['):
-
-            # HACK
-            # Makes an ugly assumption that there is no space between the ] and the :
-            link, url = link_line.split(']:', 1)
-            
-            # Converts the line into a ipynb compatible markdown link.
-            substitutions[link.strip() + ']'] = '{}({})'.format(link.strip() + ']', url.strip())
         
-    if content_type == 'md':
-        generated_filename = stub_filename.replace('stubs/', 'content/').replace('.md', '_GENERATED_by_add_links.md')
-            
-        print('Adding links and making content file: {}'.format(generated_filename))
-        with open(generated_filename, 'w') as f:
-            for line in stub_lines + ['\n', '\n'] + link_lines:
-                f.write(line)
-
-    elif content_type == 'ipynb':
-        generated_filename = stub_filename.replace('stubs/', 'content/').replace('.ipynb', '_GENERATED_by_add_links.ipynb')
-
-        original_meta_filename = stub_filename.replace('.ipynb', '.ipynb-meta')
-        generated_meta_filename = generated_filename.replace('.ipynb', '.ipynb-meta')
-
-        cmd = 'cp {} {}'.format(original_meta_filename, generated_meta_filename)
-        print('Executing: {}'.format(cmd))
-        os.system(cmd)
-
-        print('Adding links and making content file: {}'.format(generated_filename))
-        with open(generated_filename, 'w') as f:
-            for line_number, line in enumerate(stub_lines):
-                output = line
-                for sub_key, markdown_url in substitutions.items():
-                    if len(output.split(sub_key)) > 1:
-                        print('Substituting {} with {} in line {}: {}'.format(sub_key, markdown_url, line_number, output.strip()))
-                        output = output.replace(sub_key, markdown_url)
-                f.write(output)
+    print('Adding links and making content file: {}'.format(generated_filename))
+    with open(generated_filename, 'w') as f:
+        for line in stub_lines + ['\n', '\n'] + link_lines:
+            f.write(line)
 
 def process_arguments(args):
 
@@ -89,19 +140,21 @@ def process_arguments(args):
             os.remove(gfn)
     else:    
         for stub in markdown_files:
-            make_content_file_from_stub(stub)
+            generated_filename = stub.replace('stubs/', 'content/').replace('.md', '_GENERATED_by_add_links.md')
+            make_content_file_from_stub(stub, generated_filename)
 
         converted_ipynb_files = []
         for meta_file in ipynb_meta_files:
 
-            stub = meta_file.replace('.ipynb-meta', '.ipynb')
+            ipynb_file = meta_file.replace('.ipynb-meta', '.ipynb')
 
-            if stub not in ipynb_files:
-                print('WARNING: An IPython notebook metadata file was found without its partner IPython notebook: {}'.format(meta_file))
+            if ipynb_file not in ipynb_files:
+                print('WARNING: An IPython notebook metadata file was found without its partner: {}'.format(meta_file))
                 continue
-                
-            make_content_file_from_stub(stub, 'ipynb')
-            converted_ipynb_files.append(stub)
+
+            stub_path, final_path = convert_ipynb_file_to_stub(ipynb_file)
+            make_content_file_from_stub(stub_path, final_path)
+            converted_ipynb_files.append(ipynb_file)
 
         # Check if all IPython notebook files had metadata files:
         for ipynb_file in ipynb_files:
