@@ -34,7 +34,7 @@
                 <article>
                     <h1 class="entry-title"><a href="http://schryer.github.io/schryer_pelican_blog/article_1.html">First steps with Pelican</a></h1> 
 <footer class="post-info">
-        <abbr class="published" title="2014-05-22T22:00:00">
+        <abbr class="published" title="2014-05-22T22:00:00+03:00">
                 Thu 22 May 2014
         </abbr>
 
@@ -68,12 +68,12 @@ generates new files in <code>contents/</code> and <code>contents/pages/</code> w
 links contained in <code>external_links.md</code> appended to the end of each.</p>
 <p>The <code>Makefile</code> was altered to include a single <a href="http://www.python.org" title="Python">Python</a> command before
 each type of build:</p>
-<div class="highlight"><pre><span class="n">python</span> <span class="n">add_links</span><span class="p">.</span><span class="n">py</span>
+<div class="highlight"><pre>python add_links.py
 </pre></div>
 
 
 <p>The <code>clean</code> function within the <code>Makefile</code> was changed to:</p>
-<div class="highlight"><pre><span class="n">python</span> <span class="n">add_links</span><span class="p">.</span><span class="n">py</span> <span class="o">--</span><span class="n">clean</span>
+<div class="highlight"><pre>python add_links.py --clean
 </pre></div>
 
 

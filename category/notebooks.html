@@ -34,7 +34,7 @@
                 <article>
                     <h1 class="entry-title"><a href="http://schryer.github.io/schryer_pelican_blog/notebook_1.html">First notebook converted using Pelican</a></h1> 
 <footer class="post-info">
-        <abbr class="published" title="2014-08-18T16:00:00">
+        <abbr class="published" title="2014-08-18T16:00:00+03:00">
                 Mon 18 August 2014
         </abbr>
 
@@ -54,18 +54,18 @@ All link keys in square brackets within this notebook that are also
 found in <a href="https://github.com/schryer/schryer_pelican_blog/blob/master/external_links.md" title="external_links.md">external_links.md</a> are changed into appropriate markdown
 link text.</p>
 <h2>Running <a href="http://www.python.org" title="Python">Python</a> code:</h2>
-<div class="highlight"><pre><span class="n">import</span> <span class="n">matplotlib</span><span class="p">.</span><span class="n">pyplot</span> <span class="n">as</span> <span class="n">plt</span>
-<span class="n">import</span> <span class="n">numpy</span>
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span>
 </pre></div>
 
 
 <h2>Plotting with <a href="http://matplotlib.org/" title="matplotlib">matplotlib</a>:</h2>
-<div class="highlight"><pre><span class="c">%matplotlib inline</span>
+<div class="highlight"><pre><span class="nf">%matplotlib</span> <span class="kr">inline</span>
 
 
-<span class="n">x</span> <span class="p">=</span> <span class="n">numpy</span><span class="p">.</span><span class="nb">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">numpy</span><span class="p">.</span><span class="nb">pi</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">numpy</span><span class="p">.</span><span class="nb">sin</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
-<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">&#39;A simple chirp&#39;</span><span class="p">);</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">numpy</span><span class="p">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">numpy</span><span class="p">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">numpy</span><span class="p">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="err">&#39;</span><span class="n">A</span> <span class="n">simple</span> <span class="n">chirp</span><span class="err">&#39;</span><span class="p">);</span>
 </pre></div>
 
 

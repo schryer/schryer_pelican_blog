@@ -25,12 +25,12 @@ generates new files in &lt;code&gt;contents/&lt;/code&gt; and &lt;code&gt;conten
 links contained in &lt;code&gt;external_links.md&lt;/code&gt; appended to the end of each.&lt;/p&gt;
 &lt;p&gt;The &lt;code&gt;Makefile&lt;/code&gt; was altered to include a single &lt;a href="http://www.python.org" title="Python"&gt;Python&lt;/a&gt; command before
 each type of build:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;python&lt;/span&gt; &lt;span class="n"&gt;add_links&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;python add_links.py
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;The &lt;code&gt;clean&lt;/code&gt; function within the &lt;code&gt;Makefile&lt;/code&gt; was changed to:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;python&lt;/span&gt; &lt;span class="n"&gt;add_links&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="n"&gt;clean&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;python add_links.py --clean
 &lt;/pre&gt;&lt;/div&gt;
 
 
