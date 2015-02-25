@@ -8,14 +8,14 @@ Summary: My resume
 
 Programmer — Data analyst — Technical editor/writer
 
-**Programmer with a chemical engineering background.** I seek a
-position in a visionary company within a great team. Most people would
-characterize me as an excellent communicator (founder of
+**Programmer with a chemical engineering background.**
+
+I seek a position in a visionary company within a great team. Most
+people would characterize me as an excellent communicator (founder of
 [Scientific Scribe OÜ]) with an eye for detail who enjoys difficult
 technical problems. I enjoy creating software and would like an
 opportunity to work within a professional team.
 
-**github:** <https://schryer.github.io>
 **email** <schryer@gmail.com>
 
 ## Employment
@@ -98,7 +98,7 @@ Practices safe computation with version control and unit testing:
 
 Avid supporter of [FOSS] with an emphasis on sharing my code:
 :   -   Bitbucket (<https://bitbucket.org/schryer>)
-	-   GitHub (<https://schryer.github.io>).
+	-   GitHub (<https://github.com/schryer>).
 
 Basic proficiency in:
 :   -   C, C++, Fortran, COBOL, Pascal, Java.
@@ -137,6 +137,8 @@ Basic front-end and advanced back-end web and cloud development using:
 
 ## Contact
 
--   **github:** <https://schryer.github.io>
+-   **email:** <schryer@gmail.com>
+-   **blog:** <https://schryer.github.io>
+-   **github:** <https://github.com/schryer>
 -   **bitbucket:** <https://bitbucket.org/schryer>
 
